@@ -1,6 +1,8 @@
 # Pokemon Explorer
 
-![Pokemon Logo](./src/assets/pokemon_logo_transparent.png)
+<div align="center">
+  <img src="./src/assets/pokemon_logo_transparent.png" alt="Pokemon Logo" width="300"/>
+</div>
 
 A Vite x React project for D3/React course.
 
