@@ -1,7 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import heroImg from "./assets/hero.png";
 import pokemonLogo from "./assets/pokemon_logo_transparent.png";
 import "./App.css";
 import Frame from "./Frame.jsx";
@@ -47,7 +44,7 @@ function App() {
       <div style={{ backgroundColor: "#ffcb03", display: "inline-block" }}>
         <img src={pokemonLogo} width={400} />
       </div>
-      <h1>Pokemon Explorer</h1>
+      <h1>Gotta Catch 'Em All!</h1>
 
       <div className="ticks"></div>
 
