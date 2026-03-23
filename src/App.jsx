@@ -4,6 +4,7 @@ import "./App.css";
 import Frame from "./Frame.jsx";
 import Values from "./Values.jsx";
 import GridComponent from "./GridComponent.jsx";
+import Button from "./Button.jsx";
 
 const pokemons = [
   { id: 1, name: "Bulbasaur", type: "Grass", hp: 45, attack: 49 },
@@ -51,12 +52,14 @@ function App() {
         Gotta Catch 'Em All!
       </h1>
 
-      <button
-        onClick={() =>
-          setPokemonData(pokemons.filter((d) => d.type === "Fire"))
-        }>
-        Fire!
-      </button>
+      {pokemon_types.map((type) => (
+        <Button
+          key={type}
+          group={type}
+          pokemons={pokemons}
+          setPokemonData={setPokemonData}
+        />
+      ))}
 
       <button onClick={() => setPokemonData(pokemons)}>Show All</button>
 
