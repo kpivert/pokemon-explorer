@@ -121,6 +121,34 @@ code {
   transform: translateY(-2px);
 }
 
+/* .frame {
+  transition: transform 0.35s ease;
+}
+
 .frame:hover {
-  transform: translateY(-20px);
+  transform: translateX(30px) translateY(-20px);
+} */
+
+/* .frame {
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+.frame:hover {
+  transform: translate(30px, -20px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+} */
+
+.frame {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.frame:hover {
+  transform: translate(5px, -18px);
+}
+
+.frame:hover img {
+  transform: scale(2);
 }

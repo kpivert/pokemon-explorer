@@ -7,6 +7,7 @@ const Frame = ({ children }) => {
         borderRadius: 8,
         backgroundColor: "#ffffff",
         padding: 16,
+        margin: 10,
       }}>
       {children}
     </div>
