@@ -42,9 +42,11 @@ function App() {
   return (
     <>
       <div style={{ backgroundColor: "#ffcb03", display: "inline-block" }}>
-        <img src={pokemonLogo} width={400} />
+        <img src={pokemonLogo} width={200} />
       </div>
-      <h1>Gotta Catch 'Em All!</h1>
+      <h1 style={{ color: "#264eff", fontWeight: 900 }}>
+        Gotta Catch 'Em All!
+      </h1>
 
       <div className="ticks"></div>
 
