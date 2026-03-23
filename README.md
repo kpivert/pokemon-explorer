@@ -1,9 +1,9 @@
 # Pokemon Explorer
 
-![]("./src/assets/pokemon_logo_transparent.png" alt="Pokemon Logo")
+![Pokemon Logo](./src/assets/pokemon_logo_transparent.png)
 
 A Vite x React project for D3/React course.
 
 ## Preview
 
-[Pokemon Explorer]("https://kpivert.github.io/pokemon-explorer/")
+[Pokemon Explorer](https://kpivert.github.io/pokemon-explorer/)
