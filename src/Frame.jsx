@@ -1,14 +1,17 @@
-const Frame = ({ children }) => {
+const Frame = ({ children, style, onMouseEnter, onMouseLeave }) => {
   return (
     <div
       class="frame"
       style={{
-        border: "2px solid #00468b",
+        border: "2px solid #246eff",
         borderRadius: 8,
-        backgroundColor: "#ffffff",
+        backgroundColor: "#fefefe",
         padding: 16,
         margin: 10,
-      }}>
+        ...style,
+      }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}>
       {children}
     </div>
   );

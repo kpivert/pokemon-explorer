@@ -1,6 +1,5 @@
 import { useState } from "react";
 import pokemonLogo from "./assets/pokemon_logo_transparent.png";
-import "./App.css";
 import Frame from "./Frame.jsx";
 import Values from "./Values.jsx";
 import GridComponent from "./GridComponent.jsx";
@@ -31,17 +30,9 @@ const pokemons = [
 
 function App() {
   const [color, setColor] = useState("blue");
-
   const pokemon_types = [...new Set(pokemons.map((d) => d.type))];
   const [pokemonData, setPokemonData] = useState(pokemons);
-
-  // console.log(
-  //   pokemons.map((d, i) => {
-  //     return d.name;
-  //   }),
-  // );
-
-  console.log(pokemon_types);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
     <>
@@ -52,47 +43,69 @@ function App() {
         Gotta Catch 'Em All!
       </h1>
 
-      {pokemon_types.map((type) => (
-        <Button
-          key={type}
-          group={type}
-          pokemons={pokemons}
-          setPokemonData={setPokemonData}
-        />
-      ))}
+      <GridComponent>
+        {pokemon_types.map((type) => (
+          <Button
+            key={type}
+            group={type}
+            pokemons={pokemons}
+            setPokemonData={setPokemonData}
+          />
+        ))}
+        <button onClick={() => setPokemonData(pokemons)}>Show All</button>
+      </GridComponent>
 
-      <button onClick={() => setPokemonData(pokemons)}>Show All</button>
-
-      {/* <div className="ticks"></div> */}
-
-      {/* <div className="ticks"></div> */}
-      {/* <section id="spacer"></section> */}
-
-      <div
-        className="images"
-        onMouseEnter={() => setColor("tomato")}
-        onMouseLeave={() => setColor("blue")}>
+      <div className="images">
         <GridComponent>
           {pokemonData.map((d, i) => (
-            <Frame>
+            <Frame
+              key={i}
+              onMouseEnter={() => setHoveredIndex(i)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              style={{
+                backgroundColor: hoveredIndex === i ? "#246eff" : "#fefefe",
+                border:
+                  hoveredIndex === i
+                    ? "2px solid #fefefe"
+                    : "2px solid #246eff",
+                width: 200,
+                height: 260,
+              }}>
               <div
                 style={{
-                  width: 200,
-                  backgroundColor: color,
-                  height: "auto",
+                  width: "100%",
+                  height: "100%",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
                   gap: 8,
+                  boxSizing: "border-box",
                 }}>
-                <h2 style={{ margin: 0, fontWeight: 900 }}>{d.name}</h2>
+                <h2
+                  style={{
+                    margin: 0,
+                    fontWeight: 900,
+                    color: hoveredIndex === i ? "#ffffff" : "#000000",
+                  }}>
+                  {d.name}
+                </h2>
                 <img
                   id="pokemon-image"
                   src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${d.id}.png`}
                   alt={d.name}
                 />
-                <Values variable="HP" value={d.hp} />
-                <Values variable="Attacking" value={d.attack} />
+                <div
+                  style={{
+                    marginTop: "auto",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    gap: 8,
+                    paddingBottom: 12,
+                  }}>
+                  <Values variable="HP" value={d.hp} />
+                  <Values variable="Attacking" value={d.attack} />
+                </div>
               </div>
             </Frame>
           ))}
