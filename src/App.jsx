@@ -52,7 +52,9 @@ function App() {
             setPokemonData={setPokemonData}
           />
         ))}
-        <button onClick={() => setPokemonData(pokemons)}>Show All</button>
+        {pokemonData != pokemons ? (
+          <button onClick={() => setPokemonData(pokemons)}>Show All</button>
+        ) : null}
       </GridComponent>
 
       <div className="images">

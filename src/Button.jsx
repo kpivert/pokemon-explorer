@@ -8,7 +8,7 @@ const Button = (props) => {
           props.pokemons.filter((d) => d.type === props.group),
         )
       }>
-      {props.group}!
+      {props.group}
     </button>
   );
 };
