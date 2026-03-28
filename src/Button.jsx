@@ -24,6 +24,7 @@ import normalIcon from "./assets/normal.svg";
 import ghostIcon from "./assets/ghost.svg";
 import fightingIcon from "./assets/fighting.svg";
 import rockIcon from "./assets/rock.svg";
+import dragonIcon from "./assets/dragon.svg";
 
 const TYPE_ICONS = {
   Fire: fireIcon,
@@ -35,16 +36,24 @@ const TYPE_ICONS = {
   Ghost: ghostIcon,
   Fighting: fightingIcon,
   Rock: rockIcon,
+  Dragon: dragonIcon,
 };
 
 const Button = (props) => {
   return (
     <button
+      className="type-button"
       onClick={() =>
         props.setPokemonData(
           props.pokemons.filter((d) => d.type === props.group),
         )
-      }>
+      }
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "6px",
+        borderRadius: "10px",
+      }}>
       <img src={TYPE_ICONS[props.group]} alt="" width={16} height={16} />
       {props.group}
     </button>

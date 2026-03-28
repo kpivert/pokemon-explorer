@@ -4,6 +4,9 @@ import Frame from "./Frame.jsx";
 import Values from "./Values.jsx";
 import GridComponent from "./GridComponent.jsx";
 import Button from "./Button.jsx";
+import Maxbar from "./Maxbar.jsx";
+import ReferenceBar from "./ReferenceBar.jsx";
+import "./index.css";
 
 const pokemons = [
   { id: 1, name: "Bulbasaur", type: "Grass", hp: 45, attack: 49 },
@@ -33,7 +36,11 @@ function App() {
   const pokemon_types = [...new Set(pokemons.map((d) => d.type))];
   const [pokemonData, setPokemonData] = useState(pokemons);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const maxHp = Math.max(...pokemons.map((p) => p.hp));
+  const maxAttack = Math.max(...pokemons.map((p) => p.attack));
 
+  console.log(maxHp);
+  console.log(maxAttack);
   return (
     <>
       <div style={{ backgroundColor: "#ffcb03", display: "inline-block" }}>
@@ -53,7 +60,12 @@ function App() {
           />
         ))}
         {pokemonData != pokemons ? (
-          <button onClick={() => setPokemonData(pokemons)}>Show All</button>
+          <button
+            className="show-all"
+            onClick={() => setPokemonData(pokemons)}
+            style={{ borderRadius: "10px", fontWeight: "700" }}>
+            Gotta Show 'Em All!
+          </button>
         ) : null}
       </GridComponent>
 
@@ -65,11 +77,11 @@ function App() {
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
               style={{
-                backgroundColor: hoveredIndex === i ? "#246eff" : "#fefefe",
+                backgroundColor: hoveredIndex === i ? "#246eff" : "#FFF9C4",
                 border:
                   hoveredIndex === i
-                    ? "2px solid #fefefe"
-                    : "2px solid #246eff",
+                    ? "3px solid #FFF9C4"
+                    : "3px solid #246eff",
                 width: 200,
                 height: 260,
               }}>
@@ -106,7 +118,10 @@ function App() {
                     paddingBottom: 12,
                   }}>
                   <Values variable="HP" value={d.hp} />
+                  {/* <Maxbar value={maxHp}></Maxbar> */}
+                  <ReferenceBar individualVar={d.hp} maxVar={maxHp} />
                   <Values variable="Attacking" value={d.attack} />
+                  <ReferenceBar individualVar={d.attack} maxVar={maxAttack} />
                 </div>
               </div>
             </Frame>

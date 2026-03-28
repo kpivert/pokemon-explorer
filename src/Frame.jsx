@@ -3,9 +3,9 @@ const Frame = ({ children, style, onMouseEnter, onMouseLeave }) => {
     <div
       class="frame"
       style={{
-        border: "2px solid #246eff",
+        border: "3px solid #246eff",
         borderRadius: 8,
-        backgroundColor: "#fefefe",
+        backgroundColor: "#FFF9C4",
         padding: 16,
         margin: 10,
         ...style,
