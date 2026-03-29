@@ -4,7 +4,6 @@ import Frame from "./Frame.jsx";
 import Values from "./Values.jsx";
 import GridComponent from "./GridComponent.jsx";
 import Button from "./Button.jsx";
-import Maxbar from "./Maxbar.jsx";
 import ReferenceBar from "./ReferenceBar.jsx";
 import "./index.css";
 
@@ -118,7 +117,6 @@ function App() {
                     paddingBottom: 12,
                   }}>
                   <Values variable="HP" value={d.hp} />
-                  {/* <Maxbar value={maxHp}></Maxbar> */}
                   <ReferenceBar
                     individualVar={d.hp}
                     maxVar={maxHp}

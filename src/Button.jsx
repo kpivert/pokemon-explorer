@@ -1,20 +1,3 @@
-// import { useState } from "react";
-
-// const Button = (props) => {
-//   return (
-//     <button
-//       onClick={() =>
-//         props.setPokemonData(
-//           props.pokemons.filter((d) => d.type === props.group),
-//         )
-//       }>
-//       {props.group}
-//     </button>
-//   );
-// };
-
-// export default Button;
-
 import fireIcon from "./assets/fire.svg";
 import waterIcon from "./assets/water.svg";
 import grassIcon from "./assets/grass.svg";
