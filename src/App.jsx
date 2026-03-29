@@ -77,10 +77,10 @@ function App() {
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
               style={{
-                backgroundColor: hoveredIndex === i ? "#246eff" : "#FFF9C4",
+                backgroundColor: hoveredIndex === i ? "#246eff" : "#f0f0ff",
                 border:
                   hoveredIndex === i
-                    ? "3px solid #FFF9C4"
+                    ? "5px solid #b8b8d0"
                     : "3px solid #246eff",
                 width: 200,
                 height: 260,
@@ -113,13 +113,17 @@ function App() {
                     marginTop: "auto",
                     display: "flex",
                     flexDirection: "column",
-                    alignItems: "center",
+                    alignItems: "flex-start",
                     gap: 8,
                     paddingBottom: 12,
                   }}>
                   <Values variable="HP" value={d.hp} />
                   {/* <Maxbar value={maxHp}></Maxbar> */}
-                  <ReferenceBar individualVar={d.hp} maxVar={maxHp} />
+                  <ReferenceBar
+                    individualVar={d.hp}
+                    maxVar={maxHp}
+                    variable="hp"
+                  />
                   <Values variable="Attacking" value={d.attack} />
                   <ReferenceBar individualVar={d.attack} maxVar={maxAttack} />
                 </div>

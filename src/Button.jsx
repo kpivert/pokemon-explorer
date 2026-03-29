@@ -51,6 +51,7 @@ const Button = (props) => {
       style={{
         display: "flex",
         alignItems: "center",
+        justifyContent: "center",
         gap: "6px",
         borderRadius: "10px",
       }}>

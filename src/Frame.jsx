@@ -1,7 +1,7 @@
 const Frame = ({ children, style, onMouseEnter, onMouseLeave }) => {
   return (
     <div
-      class="frame"
+      className="frame"
       style={{
         border: "3px solid #246eff",
         borderRadius: 8,

@@ -28,7 +28,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --text: #9ca3af;
     --text-h: #f3f4f6;
@@ -44,10 +44,12 @@
   #social .button-icon {
     filter: invert(1) brightness(2);
   }
-}
+} */
 
 body {
   margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 #root {
@@ -91,9 +93,16 @@ p {
   margin: 0;
 }
 
-.grid-container {
+/* .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px;
+} */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 10px;
   padding: 10px;
 }
@@ -107,7 +116,7 @@ p {
 }
 
 .frame:hover img {
-  transform: scale(2) translate(1px, 10px);
+  transform: scale(2) translate(1px, -10px);
 }
 
 .type-button {
@@ -127,4 +136,5 @@ p {
   transform: scale(1.1);
   background-color: #264eff;
   color: #ffffff;
+  border: #b8b8d0 4px solid;
 }
